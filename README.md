@@ -49,7 +49,7 @@ Note that this tutorial does not prevent duplicate user creation.
 
 You can run this GGL several times and create several users with the same properties (only the id would change)
 
-```
+```js
 mutation {
  createUser(
      name: "John Doe", 
@@ -67,7 +67,7 @@ Repeat a few times, changing the name and email to create other users.
 
 ## Step 6. List all users
 
-```
+```js
 query {
  allUsers {
   name
@@ -81,7 +81,7 @@ query {
 
 The userID should match the id returned by the command above.
 
-```
+```js
 mutation {
   createRecipe(
     userId: 1
@@ -104,7 +104,7 @@ mutation {
 
 ## Step 8. List all the recipes
 
-```
+```js
 query {
  allRecipes {
 	title
@@ -423,7 +423,7 @@ Browse to: http://localhost:4000/
 
 This step was missing from the tutorial.
 
-```
+```js
 mutation {
  createUser(
      name: "John Doe", 
@@ -440,7 +440,7 @@ mutation {
 
 Tutorial had userId wrong. User userID: 1.
 
-```
+```js
 mutation {
   createRecipe(
     userId: 1
@@ -463,7 +463,7 @@ mutation {
 
 ## Update package.json
 
-```
+```json
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
