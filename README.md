@@ -41,7 +41,7 @@ npm start
 
 Browse to: http://localhost:4000/
 
-## Step 5. Ceate a user
+## Step 5. Create a user
 
 Paste the GQL below in the left window of the playground, then press the Play button.
 
