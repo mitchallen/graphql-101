@@ -47,7 +47,7 @@ Paste the GQL below in the left window of the playground, then press the Play bu
 
 Note that this tutorial does not prevent duplicate user creation.
 
-You can run this GGL several times and create several uses with the same properties (only the id would change)
+You can run this GGL several times and create several users with the same properties (only the id would change)
 
 ```
 mutation {
