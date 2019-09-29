@@ -2,6 +2,9 @@ const bcrypt = require('bcryptjs')
 
 const resolvers = {
       Query: {
+            async allUsers(root, args, { models }) {
+                  return models.User.findAll()
+            },
             async user(root, { id }, { models }) {
                   return models.User.findById(id)
             },

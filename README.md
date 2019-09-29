@@ -1,6 +1,148 @@
+# GraphQL-101
+Getting started with an Apollo GraphQL Server and NodeJS
+--
+
+# Introduction
 
 ## References
 
+* https://www.apollographql.com/docs/apollo-server/
+
+* * *
+
+# Usage
+
+## Step 1. Clone and install the dependencies
+
+* Clone this project locally 
+* Switch to the project folder
+* Run:
+```
+npm install 
+```
+
+## Step 2. Initialize the database
+
+This will create a file called `database.sqlite` in the project root folder.
+
+Then it will run `sequelize db:migrate`.
+
+```
+npm run create:db
+```
+
+## Step 3. Start the Apollo Graph QL Server
+
+```
+npm start
+```
+
+## Step 4. Browse to the GraphQL Playground
+
+Browse to: http://localhost:4000/
+
+## Step 5. Ceate a user
+
+Paste the GQL below in the left window of the playground, then press the Play button.
+
+Note that this tutorial does not prevent duplicate user creation.
+
+You can run this GGL several times and create several uses with the same properties (only the id would change)
+
+```
+mutation {
+ createUser(
+     name: "John Doe", 
+     email: "john@gmail.com", 
+     password: "secret") 
+{
+  name
+  email
+  id
+ }
+}
+```
+
+Repeat a few times, changing the name and email to create other users.
+
+## Step 6. List all users
+
+```
+query {
+ allUsers {
+  name
+  email
+  id
+ }
+}
+```
+
+## Step 7. Create a recipe
+
+The userID should match the id returned by the command above.
+
+```
+mutation {
+  createRecipe(
+    userId: 1
+    title: "Honey BBQ Chicken Wings"
+    ingredients: "Chicken, Honey BBQ Sauce"
+    direction: "Put wings in sauce, Throw em on BBQ"
+  ) {
+    id
+    title
+    ingredients
+    direction
+    user {
+      id
+      name
+      email
+    }
+  }
+}
+```
+
+## Step 8. List all the recipes
+
+```
+query {
+ allRecipes {
+	title
+  direction
+  ingredients
+  id
+  user {
+    name
+    email
+    id
+  }
+ }
+}
+```
+
+## Step 9. View the console
+
+You should see database activity for the steps above that was echoed to the console.
+
+## Step 10. Start over
+
+To start over:
+
+```
+npm run reset:db
+```
+
+* * *
+
+# Original project tutorial setup
+
+Note that I've made some fixes, additions and changes.
+
+Review the code for the latest info and examples.
+
+## References
+
+* https://www.apollographql.com/docs/apollo-server/
 * https://scotch.io/tutorials/super-simple-graphql-with-node
 
 # Steps
@@ -325,6 +467,9 @@ mutation {
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precreate:db": "touch database.sqlite",
+    "create:db": "node_modules/.bin/sequelize db:migrate",
+    "delete:db": "rm database.sqlite"
   },
 ```
