@@ -1,0 +1,21 @@
+{
+  "name": "graphql-101",
+  "version": "1.0.0",
+  "description": "* https://scotch.io/tutorials/super-simple-graphql-with-node",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.9.4",
+    "bcryptjs": "^2.4.3",
+    "graphql": "^14.5.8",
+    "sequelize": "^5.19.1",
+    "sequelize-cli": "^5.5.1",
+    "sqlite3": "^4.1.0"
+  }
+}
