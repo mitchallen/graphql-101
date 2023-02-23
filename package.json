@@ -18,7 +18,7 @@
     "apollo-server": "^2.14.2",
     "bcryptjs": "^2.4.3",
     "graphql": "^14.5.8",
-    "sequelize": "^5.19.1",
+    "sequelize": "^6.28.2",
     "sequelize-cli": "^5.5.1",
     "sqlite3": "^4.1.0"
   }
